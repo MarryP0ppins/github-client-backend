@@ -1,28 +1,19 @@
 {
-  "name": "github-client-backend",
-  "private": true,
-  "version": "1.0.0",
-  "main": "server.js",
+  "name": "netlify-express",
+  "version": "0.0.1",
+  "description": "Example of how to deploy a Express.js Netlify app.",
+  "main": "functions/server.js",
   "scripts": {
-    "start": "nodemon src/app.ts",
-    "start:debug": "nodemon --inspect src/app.ts"
+    "build": "netlify deploy --prod",
+    "start": "nodemon server-local.js"
   },
-  "author": "Nikita Gordeev <nagordeev0106@yandex.ru>",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^1.5.1",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "lodash": "^4.17.21",
-    "node-fetch": "^3.3.2",
-    "typescript": "^5.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/cors": "^2.8.14",
-    "@types/express": "^4.17.18",
-    "@types/lodash": "^4.14.199",
-    "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "netlify-cli": "^16.4.2",
+    "netlify-lambda": "^1.6.3",
+    "nodemon": "^1.19.2",
+    "serverless-http": "^2.3.0"
   }
 }
