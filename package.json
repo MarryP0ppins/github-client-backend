@@ -1,19 +1,17 @@
 {
-  "name": "netlify-express",
-  "version": "0.0.1",
-  "description": "Example of how to deploy a Express.js Netlify app.",
-  "main": "functions/server.js",
+  "name": "github-client-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:MarryP0ppins/github-client-backend.git",
+  "author": "Nikita Gordeev <nagordeev0106@yandex.ru>",
+  "license": "MIT",
+  "private": true,
   "scripts": {
-    "build": "netlify deploy --prod",
-    "start": "nodemon server-local.js"
+    "fire": "firebase init functions"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "netlify-cli": "^16.4.2",
-    "netlify-lambda": "^1.6.3",
-    "nodemon": "^1.19.2",
-    "serverless-http": "^2.3.0"
+  "dependencies": {
+    "firebase": "^10.4.0",
+    "firebase-admin": "^11.10.1",
+    "firebase-functions": "^4.4.1"
   }
 }
