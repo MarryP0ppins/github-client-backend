@@ -15,19 +15,26 @@ export const getGithubAccessToken = onRequest(
       clientSecretProduction.value() +
       "&code=" +
       request.query.code;
-    await fetch("https://github.com/login/oauth/access_token" + params, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((result) => {
-        return result.json();
-      })
-      .then((data) => {
-        response.json(data);
-      })
-      .catch((error) => response.json(error));
+    try {
+      const result = await fetch(
+        "https://github.com/login/oauth/access_token" + params,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      ).then((result) => result.json());
+      response
+        .set({
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Origin": "*",
+        })
+        .json(result);
+    } catch (error) {
+      response.json(error);
+    }
   }
 );
 
@@ -45,19 +52,26 @@ export const getGithubAccessTokenDeveloped = onRequest(
       clientSecretDeveloped.value() +
       "&code=" +
       request.query.code;
-    await fetch("https://github.com/login/oauth/access_token" + params, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((result) => {
-        return result.json();
-      })
-      .then((data) => {
-        response.json(data);
-      })
-      .catch((error) => response.json(error));
+    try {
+      const result = await fetch(
+        "https://github.com/login/oauth/access_token" + params,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      ).then((result) => result.json());
+      response
+        .set({
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Origin": "*",
+        })
+        .json(result);
+    } catch (error) {
+      response.json(error);
+    }
   }
 );
 
@@ -75,18 +89,25 @@ export const getGithubAccessTokenDeploy = onRequest(
       clientSecretDeploy.value() +
       "&code=" +
       request.query.code;
-    await fetch("https://github.com/login/oauth/access_token" + params, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((result) => {
-        return result.json();
-      })
-      .then((data) => {
-        response.json(data);
-      })
-      .catch((error) => response.json(error));
+    try {
+      const result = await fetch(
+        "https://github.com/login/oauth/access_token" + params,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      ).then((result) => result.json());
+      response
+        .set({
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Origin": "*",
+        })
+        .json(result);
+    } catch (error) {
+      response.json(error);
+    }
   }
 );
